@@ -1,0 +1,572 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: PICKBASIC
+scopeName: source.pickbasic
+fileTypes: []
+uuid: 951eddfa-255b-4fc2-b2b8-5354cba4c8a2
+
+patterns:
+
+
+- name: entity.name.function
+  comment: method
+  begin: (\()  
+  beginCaptures:
+    '0': {name: 'entity.name.function'}
+  end: '(\))'
+  endCaptures:
+    '0': {name: 'entity.name.function'}  
+  patterns:
+    - name: variable.parameter
+      comment: Parameter
+      match: '\b[A-Z0-9\.]+\b'
+    - include: $self
+    - name: support.other
+      match: .
+
+- name: keyword.control
+  comment: SUBROUTINE
+  match: '(?<=\s|^)SUBROUTINE(?=\s)'
+
+- name: string.quoted.single
+  comment: Single Quoted String
+  begin: \'
+  end: \'
+
+- name: string.quoted.double
+  comment: Double Quoted String
+  begin: \"
+  end: \"
+
+- name: invalid.illegal
+  comment: It's illegal in all 50 states to use lower case.
+  match: '\b[a-z]*\b'
+
+- name: keyword.control
+  comment: Left Paren
+  match: \(
+
+- name: keyword.control
+  comment: Right Paren
+  match: \)
+
+- name: keyword.control
+  comment: Left Bracket
+  match: \[
+
+- name: keyword.control
+  comment: Right Bracket
+  match: \]
+
+- name: keyword.control
+  comment: Left Arrow
+  match: \<
+
+- name: keyword.control
+  comment: Right Arrow
+  match: \>
+
+- name: keyword.control
+  comment: RETURN
+  match: '(?<=\s|^)RETURN(?=\s)'
+
+- name: keyword.control
+  comment: EXIT
+  match: '(?<=\s)(EXIT)(?=\s)'
+
+- name: keyword.control
+  comment: GOSUB
+  match: '(?<=\s|^)(GOSUB)(?=\s)'
+
+- name: keyword.control
+  comment: GOTO
+  match: '(?<=\s)(GOTO)(?=\s)'
+
+- name: keyword.control
+  comment: STOP
+  match: '(?<=\s)(STOP)(?=\s)'
+
+- name: entity.name.function
+  comment: METHOD
+  match: '^[^(\s\!\*)-]*:'
+
+- name: keyword.control
+  comment: BY
+  match: '(?<=\s)(BY)(?=\s)'
+
+- name: keyword.control
+  comment: IF 
+  match: '(?<=\s|^)(IF)(?=\s)'
+
+- name: keyword.control
+  comment: ELSE
+  match: '(?<=\s)(ELSE)(?=\s)'
+
+- name: keyword.control
+  comment: THEN
+  match: '(?<=\s)(THEN)(?=\s)'
+
+- name: keyword.control
+  comment: ON ERROR
+  match: '(?<=\s)(ON ERROR)(?=\s)'
+
+- name: keyword.control
+  comment: LOCKED
+  match: '(?<=\s)(LOCKED)(?=\s)'
+
+- name: keyword.control
+  comment: END
+  match: '(?<=\s|^)END(?=\s)'
+
+- name: keyword.control
+  comment: BEGIN
+  match: '(?<=\s)(BEGIN)(?=\s)'
+
+- name: keyword.control
+  comment: CASE
+  match: '(?<=\s)(CASE)(?=\s)'
+
+- name: keyword.control
+  comment: OTHERWISE
+  match: '(?<=\s)(OTHERWISE)(?=\s)'
+
+- name: keyword.control
+  comment: ON
+  match: '(?<=\s)(ON)(?=\s)'
+
+- name: support.function
+  comment: LOCATE
+  match: '(?<=\s)(LOCATE)(?=\s)'
+
+- name: support.function
+  comment: MATCH
+  match: '(?<=\s)(MATCH)(?=\s)'
+
+- name: support.function
+  comment: MATCHES
+  match: '(?<=\s)(MATCHES)(?=\s)'
+
+- name: support.function
+  comment: FIND
+  match: '(?<=\s|^)(FIND)(?=\s)'
+
+- name: support.function
+  comment: FINDSTR
+  match: '(?<=\s|^)(FINDSTR)(?=\s)'
+
+- name: support.function
+  comment: FIX
+  match: '(?<=\s|^)(FIX)(?=\s)'
+
+- name: support.function
+  comment: DELETE
+  match: '(?<=\s|^)(DELETE)(?=\s)'
+
+- name: support.function
+  comment: DELETEU
+  match: '(?<=\s|^)(DELETEU)(?=\s)'
+
+- name: support.function
+  comment: WRITE
+  match: '(?<=\s|^)(WRITE)(?=\s)'
+
+- name: support.function
+  comment: WRITEV
+  match: '(?<=\s)(WRITEV)(?=\s)'
+
+- name: support.function
+  comment: WRITEU
+  match: '(?<=\s)(WRITEU)(?=\s)'
+
+- name: support.function
+  comment: WRITEVU
+  match: '(?<=\s)(WRITEVU)(?=\s)'
+
+- name: support.function
+  comment: WRITESEQ
+  match: '(?<=\s)(WRITESEQ)(?=\s)'
+
+- name: support.function
+  comment: CLEARFILE
+  match: '(?<=\s)(CLEARFILE)(?=\s)'
+
+- name: support.function
+  comment: CALL
+  match: '(?<=\s)(CALL)(?=\s)'
+
+- name: support.function
+  comment: INCLUDE
+  match: '(?<=\s)(INCLUDE)(?=\s)'
+
+- name: support.function
+  comment: #INCLUDE
+  match: '(?<=\s)(#INCLUDE)(?=\s)'
+
+- name: support.function
+  comment: $INCLUDE
+  match: '(?<=\s)(\$INCLUDE)(?=\s)'
+
+- name: keyword.control
+  comment: LITERALLY
+  match: '(?<=\s)(LITERALLY)(?=\s)'
+
+- name: keyword.control
+  comment: LIT
+  match: '(?<=\s)(LIT)(?=\s)'
+
+- name: keyword.control
+  comment: EQUATE
+  match: '(?<=\s)(EQUATE)(?=\s)'
+
+- name: keyword.control
+  comment: EQU
+  match: '(?<=\s)(EQU)(?=\s)'
+
+- name: keyword.control
+  comment: SETTING
+  match: '(?<=\s)(SETTING)(?=\s)'
+
+- name: support.function
+  comment: OPEN
+  match: '(?<=\s|^)(OPEN)(?=\s)'
+
+- name: support.function
+  comment: OPENSEQ
+  match: '(?<=\s|^)(OPENSEQ)(?=\s)'
+
+- name: support.function
+  comment: CLOSESEQ
+  match: '(?<=\s|^)(CLOSESEQ)(?=\s)'
+
+- name: support.function
+  comment: CLOSE
+  match: '(?<=\s|^)(CLOSE)(?=\s)'
+
+- name: support.function
+  comment: SLEEP
+  match: '(?<=\s)(SLEEP)(?=\s)'
+
+- name: keyword.control
+  comment: TO
+  match: '(?<=\s)(TO)(?=\s)'
+
+- name: keyword.control
+  comment: IN
+  match: '(?<=\s)(IN)(?=\s)'
+
+- name: keyword.control
+  comment: FOR
+  match: '(?<=\s)(FOR)(?=\s)'
+
+- name: keyword.control
+  comment: USING
+  match: '(?<=\s)(USING)(?=\s)'
+
+- name: keyword.control
+  comment: FROM
+  match: '(?<=\s)(FROM)(?=\s)'
+
+- name: keyword.control
+  comment: NEXT
+  match: '(?<=\s)(NEXT)(?=\s)'
+
+- name: keyword.control
+  comment: CONTINUE
+  match: '(?<=\s)(CONTINUE)(?=\s)'
+
+- name: keyword.control
+  comment: LOOP
+  match: '(?<=\s)(LOOP)(?=\s)'
+
+- name: keyword.control
+  comment: UNTIL
+  match: '(?<=\s)(UNTIL)(?=\s)'
+
+- name: keyword.control
+  comment: REPEAT
+  match: '(?<=\s)(REPEAT)(?=\s)'
+
+- name: support.function
+  comment: CONVERT
+  match: '(?<=\s)(CONVERT)(?=\s)'
+
+- name: support.function
+  comment: SHOW
+  match: '(?<=\s|^)(SHOW)(?=\s)'
+
+- name: support.function
+  comment: BSCAN
+  match: '(?<=\s|^)(BSCAN)(?=\s)'
+
+- name: support.function
+  comment: READ
+  match: '(?<=\s|^)(READ)(?=\s)'
+
+- name: support.function
+  comment: READLIST
+  match: '(?<=\s|^)(READLIST)(?=\s)'
+
+- name: support.function
+  comment: READV
+  match: '(?<=\s|^)(READV)(?=\s)'
+
+- name: support.function
+  comment: READU
+  match: '(?<=\s|^)(READU)(?=\s)'
+
+- name: support.function
+  comment: READVU
+  match: '(?<=\s|^)(READVU)(?=\s)'
+
+- name: support.function
+  comment: READNEXT
+  match: '(?<=\s)(READNEXT)(?=\s)'
+
+- name: support.function
+  comment: EXECUTE
+  match: '(?<=\s)(EXECUTE)(?=\s)'
+
+- name: support.function
+  comment: SELECT
+  match: '(?<=\s)(SELECT)(?=\s)'
+
+- name: keyword.control
+  comment: RELEASE
+  match: '(?<=\s)(RELEASE)(?=\s)'
+
+- name: keyword.control
+  comment: CAPTURING
+  match: '(?<=\s)(CAPTURING)(?=\s)'
+
+- name: support.function
+  comment: PRINT
+  match: '(?<=\s)(PRINT)(?=\s)'
+
+- name: support.function
+  comment: PRINT
+  match: '(?<=\s)(SSELECT)(?=\s)'
+
+- name: support.function
+  comment: MATBUILD
+  match: '(?<=\s)(MATBUILD)(?=\s)'
+
+- name: support.function
+  comment: MATPARSE
+  match: '(?<=\s)(MATPARSE)(?=\s)'
+
+- name: support.function
+  comment: MATREAD
+  match: '(?<=\s)(MATREAD)(?=\s)'
+
+- name: support.function
+  comment: MAT
+  match: '(?<=\s)(MAT)(?=\s)'
+
+- name: support.function
+  comment: DIM
+  match: '(?<=\s)(DIM)(?=\s)'
+
+- name: support.function
+  comment: READV
+  match: '(?<=\s)(READV)(?=\s)'
+
+- name: keyword.operator
+  comment: NOT
+  match: '\#'
+
+- name: keyword.operator
+  comment: AT
+  match: '\@'
+
+- name: keyword.operator
+  comment: Equals
+  match: '\='
+
+- name: keyword.operator
+  comment: Subtract
+  match: '\-'
+
+- name: keyword.operator
+  comment: Subtract Self
+  match: '\-\='
+
+- name: keyword.operator
+  comment: Add
+  match: '\+'
+
+- name: keyword.operator
+  comment: Add Self
+  match: '\+\='
+
+- name: keyword.operator
+  comment: Concatonate
+  match: '\:'
+
+- name: keyword.operator
+  comment: Concatonate Self
+  match: '\:\='
+
+- name: keyword.operator
+  comment: Comma
+  match: '\,'
+
+- name: keyword.operator
+  comment: And
+  match: '(?<=\s)(AND)(?=\s)'
+
+- name: keyword.operator
+  comment: Or
+  match: '(?<=\s)(OR)(?=\s)'
+
+- name: keyword.operator
+  comment: NOT
+  match: '(?<=\s)(NOT)\('
+
+- name: comment.line.pick_basic
+  comment: Comment
+  begin: ((^\s*)\*)|(\;\s*\*)|((?<=:)\s*\*)
+  end: $
+  patterns:
+    - name: invalid.illegal
+      comment: highlight any FIXME comments
+      match: FIXME
+    - name: invalid.illegal
+      comment: highlight any TODO comments
+      match: TODO
+
+- name: keyword.operator
+  comment: Multiply
+  match: '\*'
+
+- name: keyword.operator
+  comment: Divide
+  match: '\/'
+
+- name: keyword.operator
+  comment: Divide  Self
+  match: '\/\='
+
+- name: keyword.operator
+  comment: Multiply Self
+  match: '\*\='
+
+- name: comment.line.pick_basic
+  comment: Comment
+  begin: ((^\s*)\!)|(\;\s*\!)|((?<=:)\s*\!)
+  end: $|(\;)
+  patterns:
+    - name: invalid.illegal
+      comment: highlight any FIXME comments
+      match: FIXME
+    - name: invalid.illegal
+      comment: highlight any TODO comments
+      match: TODO
+
+- name: support.variable
+  comment: Value Mark
+  match: '\b(VM)\b'
+
+- name: support.variable
+  comment: Variable of captured directional input as an integer + 1
+  match: '\b(MOVE\+1)\b'
+
+- name: support.variable
+  comment: System value for the F12 key
+  match: '\b(F12)\b'
+
+- name: support.variable
+  comment: System value for the F12 and ESC keys
+  match: '\b(QUIT)\b'
+
+- name: support.variable
+  comment: Variable of which menu option was selected as an integer
+  match: '\b(OPTION)\b'
+
+- name: support.variable
+  comment: Sub Sub Value Mark
+  match: '\b(SSVM)\b'
+
+- name: support.variable
+  comment: Sub Value Mark
+  match: '\b(SVM)\b'
+
+- name: support.variable
+  comment: Attribute Mark
+  match: '\b(AM)\b'
+
+- name: support.variable
+  comment: Integer system value for "PRINT"ing the bell sound
+  match: '\b(BELL\:)\b'
+
+- name: support.variable
+  comment: NO
+  match: '\b(NO)\b'
+
+- name: support.variable
+  comment: YES
+  match: '\b(YES)\b'
+
+- name: support.variable
+  comment: Process ID
+  match: '\b(PID\$)\b'
+
+- name: constant.numeric
+  comment: Integer
+  match: '\b\d*\b'
+
+- name: constant.numeric
+  comment: Decimal
+  match: '\b\d*\.\d*\b'
+
+- name: entity.name.function
+  comment: NULL statement, does nothing.
+  match: '(?<=\s)(NULL)(?=\s)'
+
+- name: entity.name.function
+  comment: Phantom Arguments
+  begin: '(PH\.ARGS)'
+  beginCaptures:
+    '0': {name: 'entity.name.function'}
+  end: '($)'
+  endCaptures:
+    '0': {name: 'entity.name.function'}  
+  patterns:
+    - name: variable.parameter
+      comment: Parameter
+      match: '\b[A-Z0-9\.]*\b'
+    - include: $self
+    - name: support.other
+      match: .
+
+- name: entity.name.function
+  comment: Function
+  begin: '(\b[A-Z0-9\.]*\()'
+  beginCaptures:
+    '0': {name: 'entity.name.function'}
+  end: '(\))'
+  endCaptures:
+    '0': {name: 'entity.name.function'}  
+  patterns:
+    - include: $self
+    - name: support.other
+      match: .
+
+# - name: entity.name.function
+#   comment: Subroutine (External)
+#   begin: '(^)(\s*)([A-Z0-9\.]+)( +)([A-Z0-9\.]+)( *, *[A-Z0-9\.":\']+)*\s*(?!.)'
+#   beginCaptures:
+#     '2': {name: 'entity.name.function'}
+#   end: '($)'
+#   endCaptures:
+#     '0': {name: 'entity.name.function'}
+#   patterns:
+#     - name: variable.parameter
+#       comment: Parameter
+#       match: '\b[A-Z0-9\.]+\b'
+#     - include: $self
+#     - name: support.other
+#       match: .
+
+- name: variable.other
+  comment: Variable
+  match: '\b[A-Z0-9.$_]*\b'
